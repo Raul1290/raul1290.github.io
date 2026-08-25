@@ -59,6 +59,23 @@
         /* Sistema de tradução (CSS) */
         :root:lang(en) .lang-pt { display: none !important; }
         :root:lang(pt) .lang-en { display: none !important; }
+
+        /* Sistema de bandeiras em CSS */
+        .flag {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%; /* Deixa as bandeiras redondas */
+            background-size: cover;
+            background-position: center;
+            display: inline-block;
+            box-shadow: 0 0 5px rgba(255,255,255,0.2);
+        }
+        .flag-pt {
+            background-image: url('https://flagcdn.com/pt.svg');
+        }
+        .flag-en {
+            background-image: url('https://flagcdn.com/gb.svg');
+        }
     </style>
 </head>
 <body class="font-sans antialiased min-h-screen stars relative">
@@ -67,25 +84,21 @@
     <nav class="p-6 flex justify-between items-center max-w-6xl mx-auto relative z-10">
         <div class="text-2xl font-bold text-white tracking-widest">RT<span class="text-purple-500">.DEV</span></div>
         <div class="flex items-center space-x-6">
-            <div class="hidden md:flex space-x-6 font-medium">
-                <a href="#mission" class="hover:text-white transition">
-                    <span class="lang-en">Mission</span>
-                    <span class="lang-pt">Missão</span>
-                </a>
-                <a href="#skills" class="hover:text-white transition">
-                    <span class="lang-en">Tech Arsenal</span>
-                    <span class="lang-pt">Arsenal Tecnológico</span>
-                </a>
-                <a href="#projects" class="hover:text-white transition">
-                    <span class="lang-en">Projects</span>
-                    <span class="lang-pt">Projetos</span>
-                </a>
-            </div>
             
             <!-- Botão de Tradução -->
-            <button onclick="toggleLanguage()" class="ml-4 bg-purple-900/60 border border-purple-500/50 hover:bg-purple-600 text-white font-bold py-1 px-3 rounded-full transition shadow-[0_0_10px_rgba(147,51,234,0.3)]">
-                <span class="lang-en">PT 🇵🇹</span>
-                <span class="lang-pt">EN 🇬🇧</span>
+            <button onclick="toggleLanguage()" class="ml-4 flex items-center justify-center bg-purple-900/40 border border-purple-500/50 hover:bg-purple-600/60 text-white font-bold py-2 px-4 rounded-full transition duration-300 shadow-[0_0_10px_rgba(147,51,234,0.4)] hover:shadow-[0_0_20px_rgba(147,51,234,0.7)] hover:-translate-y-0.5">
+    
+                <!-- Quando o site está em Inglês, mostra o botão para mudar para PT -->
+                <div class="lang-en flex items-center gap-2">
+                    <span class="flag flag-pt"></span>
+                    <span class="tracking-wider">PT</span>
+                </div>
+    
+                <!-- Quando o site está em Português, mostra o botão para mudar para EN -->
+                <div class="lang-pt flex items-center gap-2">
+                    <span class="flag flag-en"></span>
+                    <span class="tracking-wider">EN</span>
+                </div>
             </button>
         </div>
     </nav>
@@ -125,33 +138,27 @@
     <!-- Skills Section -->
     <section id="skills" class="max-w-6xl mx-auto px-6 py-20 relative z-10">
         <h3 class="text-3xl font-bold text-white mb-10 border-l-4 border-purple-500 pl-4">
-            <span class="lang-en">Tech Arsenal</span>
-            <span class="lang-pt">Arsenal Tecnológico</span>
+            <span class="lang-en">Technologies</span>
+            <span class="lang-pt">Tecnologias</span>
         </h3>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
             <div class="glass-panel p-6 rounded-xl text-center hover:bg-purple-900/40 transition cursor-default">
-                <p class="font-bold text-lg text-white">PHP & MySQL</p>
+                <p class="font-bold text-lg text-white">PHP</p>
             </div>
             <div class="glass-panel p-6 rounded-xl text-center hover:bg-purple-900/40 transition cursor-default">
-                <p class="font-bold text-lg text-white">XAMPP</p>
+                <p class="font-bold text-lg text-white">C#</p>
             </div>
             <div class="glass-panel p-6 rounded-xl text-center hover:bg-purple-900/40 transition cursor-default">
-                <p class="font-bold text-lg text-white">phpMyAdmin</p>
+                <p class="font-bold text-lg text-white">JavaScript</p>
             </div>
             <div class="glass-panel p-6 rounded-xl text-center hover:bg-purple-900/40 transition cursor-default">
-                <p class="font-bold text-lg text-white">VS Code</p>
+                <p class="font-bold text-lg text-white">HTML & CSS</p>
             </div>
             <div class="glass-panel p-6 rounded-xl text-center hover:bg-purple-900/40 transition cursor-default">
-                <p class="font-bold text-lg text-white">Git & GitHub</p>
+                <p class="font-bold text-lg text-white">Laravel & LiveWire</p>
             </div>
             <div class="glass-panel p-6 rounded-xl text-center hover:bg-purple-900/40 transition cursor-default">
-                <p class="font-bold text-lg text-white">Tailwind CSS</p>
-            </div>
-            <div class="glass-panel p-6 rounded-xl text-center hover:bg-purple-900/40 transition cursor-default">
-                <p class="font-bold text-lg text-white">Networking</p>
-            </div>
-            <div class="glass-panel p-6 rounded-xl text-center hover:bg-purple-900/40 transition cursor-default">
-                <p class="font-bold text-lg text-white">Active Directory</p>
+                <p class="font-bold text-lg text-white">MySQL</p>
             </div>
         </div>
     </section>
@@ -159,8 +166,8 @@
     <!-- Projects Section -->
     <section id="projects" class="max-w-6xl mx-auto px-6 py-20 relative z-10">
         <h3 class="text-3xl font-bold text-white mb-10 border-l-4 border-purple-500 pl-4">
-            <span class="lang-en">Mission Logs</span>
-            <span class="lang-pt">Registos de Missão</span>
+            <span class="lang-en">Logs</span>
+            <span class="lang-pt">Registos</span>
         </h3>
         <div class="grid md:grid-cols-2 gap-8">
             <!-- CRM Albinet -->
@@ -214,8 +221,8 @@
     <footer class="border-t border-purple-900/50 mt-20 relative z-10">
         <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center">
             <p class="text-purple-400/60">
-                <span class="lang-en">© 2026 Raul Teixeira. Lost in space, but the code compiles.</span>
-                <span class="lang-pt">© 2026 Raul Teixeira. Perdido no espaço, mas o código compila.</span>
+                <span class="lang-en">© 2026 Raul Teixeira. Lost in space, but it works on my localhost.</span>
+                <span class="lang-pt">© 2026 Raul Teixeira. Perdido no espaço, mas funciona no meu localhost.</span>
             </p>
             <div class="flex space-x-4 mt-4 md:mt-0">
                 <a href="#" class="text-white hover:text-purple-400 transition">GitHub</a>
